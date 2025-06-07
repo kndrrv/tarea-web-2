@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- configuracion basica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="styles\estilos.css">
+</head>
+<body>
+    <!-- encabezado principal de la pagina -->
+    <header>
+        <h1>📝 Mi Lista de Tareas</h1>
+        <!-- menu de navegacion simplificado -->
+        <nav>
+            <ul>
+                <li><a href="#task-form">Agregar Tarea</a></li>
+                <li><a href="#task-list">Ver Tareas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- contenido principal -->
+    <main>
+        <!-- seccion para agregar nuevas tareas -->
+        <section id="task-form">
+            <h2>Agregar Nueva Tarea</h2>
+            <!-- formulario para crear tareas -->
+            <form id="task-form">
+                <!-- agrupa campos relacionados -->
+                <fieldset>
+                    <legend>Nueva Tarea</legend>
+                    
+                    <!-- campo de texto para la descripcion -->
+                    <label for="task-input">Descripción de la tarea:</label>
+                    <input type="text" id="task-input" placeholder="Ejemplo: Estudiar para el examen" required>
+                    
+                    <!-- selector de prioridad -->
+                    <label for="priority">Prioridad:</label>
+                    <select id="priority">
+                        <option value="baja">🟢 Baja</option>
+                        <option value="media">🟡 Media</option>
+                        <option value="alta">🔴 Alta</option>
+                    </select>
+                    
+                    <!-- selector de categoria -->
+                    <label for="category">Categoría:</label>
+                    <select id="category">
+                        <option value="personal">Personal</option>
+                        <option value="trabajo">Trabajo</option>
+                        <option value="estudio">Estudio</option>
+                        <option value="casa">Casa</option>
+                    </select>
+                    
+                    <!-- boton para enviar el formulario -->
+                    <button type="submit">Agregar Tarea</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- seccion que muestra todas las tareas -->
+        <section id="task-list">
+            <h2>Mis Tareas</h2>
+            
+            <!-- botones para filtrar tareas -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todas">Todas</button>
+                <button class="filter-btn" data-filter="pendientes">Pendientes</button>
+                <button class="filter-btn" data-filter="completadas">Completadas</button>
+            </div>
+
+            <!-- lista de tareas (aqui se agregan las nuevas) -->
+            <ul id="task-list">
+                <!-- tarea de ejemplo 1 -->
+                <li class="task-item" data-status="pendiente" data-priority="media">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text">Hacer la compra del supermercado</span>
+                    <span class="task-priority">🟡</span>
+                    <span class="task-category">Personal</span>
+                    <button class="delete-btn">❌</button>
+                </li>
+                
+                <!-- tarea de ejemplo 2 -->
+                <li class="task-item" data-status="pendiente" data-priority="alta">
+                    <input type="checkbox" class="task-checkbox">
+                    <span class="task-text">Terminar proyecto de programación</span>
+                    <span class="task-priority">🔴</span>
+                    <span class="task-category">Estudio</span>
+                    <button class="delete-btn">❌</button>
+                </li>
+                
+                <!-- tarea de ejemplo 3 (ya completada) -->
+                <li class="task-item completed" data-status="completada" data-priority="baja">
+                    <input type="checkbox" class="task-checkbox" checked>
+                    <span class="task-text">Revisar correos electrónicos</span>
+                    <span class="task-priority">🟢</span>
+                    <span class="task-category">Trabajo</span>
+                    <button class="delete-btn">❌</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- pie de pagina simplificado -->
+    <footer>
+        <p>&copy; 2024 Mi Lista de Tareas</p>
+    </footer>
+
+    <!-- vinculacion del archivo javascript -->
+    <script src="script.js"></script>
+</body>
+</html>

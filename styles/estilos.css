@@ -1,0 +1,227 @@
+
+/* archivo css - estilos para toda la pagina */
+
+/* reseteo de estilos por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* incluye padding y border en el ancho total */
+}
+
+/* estilos generales del body */
+body {
+    font-family: Arial, sans-serif; /* fuente para todo el documento */
+    line-height: 1.6; /* espacio entre lineas */
+    color: #333; /* color del texto */
+    background-color: #f4f4f4; /* color de fondo gris claro */
+}
+
+/* estilos del encabezado */
+header {
+    background-color: #2c3e50; /* fondo azul oscuro */
+    color: white; /* texto blanco */
+    padding: 1rem; /* espaciado interno */
+    text-align: center; /* centrar texto */
+}
+
+/* titulo principal */
+header h1 {
+    margin-bottom: 1rem; /* espacio debajo del titulo */
+}
+
+/* lista de navegacion */
+header nav ul {
+    list-style: none; /* quitar puntos de la lista */
+    display: flex; /* mostrar elementos en fila */
+    justify-content: center; /* centrar elementos */
+    gap: 2rem; /* espacio entre elementos */
+}
+
+/* enlaces del menu */
+header nav a {
+    color: white; /* texto blanco */
+    text-decoration: none; /* quitar subrayado */
+    padding: 0.5rem 1rem; /* espaciado interno */
+    border-radius: 5px; /* esquinas redondeadas */
+    transition: background-color 0.3s; /* animacion suave de color */
+}
+
+/* efecto hover en enlaces */
+header nav a:hover {
+    background-color: #34495e; /* color mas claro al pasar el mouse */
+}
+
+/* contenedor principal */
+main {
+    max-width: 800px; /* ancho maximo */
+    margin: 2rem auto; /* centrar horizontalmente */
+    padding: 0 1rem; /* espaciado lateral */
+}
+
+/* estilos para todas las secciones */
+section {
+    background: white; /* fondo blanco */
+    margin: 2rem 0; /* margen arriba y abajo */
+    padding: 2rem; /* espaciado interno */
+    border-radius: 10px; /* esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra sutil */
+}
+
+/* titulos de seccion */
+h2 {
+    color: #2c3e50; /* color azul oscuro */
+    margin-bottom: 1rem; /* espacio debajo */
+    border-bottom: 2px solid #3498db; /* linea azul debajo */
+    padding-bottom: 0.5rem; /* espacio sobre la linea */
+}
+
+/* grupos de campos en formularios */
+fieldset {
+    border: 2px solid #3498db; /* borde azul */
+    border-radius: 8px; /* esquinas redondeadas */
+    padding: 1rem; /* espaciado interno */
+    margin: 1rem 0; /* margen arriba y abajo */
+}
+
+/* leyenda de fieldset */
+legend {
+    font-weight: bold; /* texto en negrita */
+    color: #2c3e50; /* color azul oscuro */
+    padding: 0 0.5rem; /* espaciado lateral */
+}
+
+/* etiquetas de campos */
+label {
+    display: block; /* mostrar en bloque (nueva linea) */
+    margin-top: 1rem; /* espacio arriba */
+    font-weight: bold; /* texto en negrita */
+}
+
+/* campos de entrada y selectores */
+input, select, textarea {
+    width: 100%; /* ancho completo */
+    padding: 0.8rem; /* espaciado interno */
+    margin-top: 0.5rem; /* espacio arriba */
+    border: 1px solid #ddd; /* borde gris claro */
+    border-radius: 5px; /* esquinas redondeadas */
+    font-size: 1rem; /* tamaño de fuente */
+}
+
+/* estilos para botones */
+button {
+    background-color: #3498db; /* fondo azul */
+    color: white; /* texto blanco */
+    padding: 0.8rem 1.5rem; /* espaciado interno */
+    border: none; /* sin borde */
+    border-radius: 5px; /* esquinas redondeadas */
+    cursor: pointer; /* cursor de mano */
+    margin: 0.5rem 0.5rem 0.5rem 0; /* margenes */
+    transition: background-color 0.3s; /* animacion de color */
+}
+
+/* efecto hover en botones */
+button:hover {
+    background-color: #2980b9; /* azul mas oscuro */
+}
+
+/* contenedor de filtros */
+.filters {
+    margin-bottom: 1rem; /* espacio debajo */
+}
+
+/* botones de filtro */
+.filter-btn {
+    background-color: #95a5a6; /* color gris */
+    margin-right: 0.5rem; /* espacio a la derecha */
+}
+
+/* boton de filtro activo */
+.filter-btn.active {
+    background-color: #3498db; /* color azul */
+}
+
+/* lista de tareas */
+#task-list {
+    list-style: none; /* sin puntos */
+}
+
+/* elemento individual de tarea */
+.task-item {
+    display: flex; /* elementos en fila */
+    align-items: center; /* centrar verticalmente */
+    padding: 1rem; /* espaciado interno */
+    margin: 0.5rem 0; /* margen arriba y abajo */
+    background-color: #ecf0f1; /* fondo gris muy claro */
+    border-radius: 5px; /* esquinas redondeadas */
+    border-left: 4px solid #3498db; /* borde izquierdo azul */
+}
+
+/* tarea completada */
+.task-item.completed {
+    opacity: 0.7; /* mas transparente */
+    border-left-color: #27ae60; /* borde verde */
+}
+
+/* texto de tarea completada */
+.task-item.completed .task-text {
+    text-decoration: line-through; /* texto tachado */
+}
+
+/* checkbox de tarea */
+.task-checkbox {
+    width: auto; /* ancho automatico */
+    margin-right: 1rem; /* espacio a la derecha */
+}
+
+/* texto de la tarea */
+.task-text {
+    flex-grow: 1; /* tomar todo el espacio disponible */
+    margin-right: 1rem; /* espacio a la derecha */
+}
+
+/* etiquetas de prioridad y categoria */
+.task-priority, .task-category {
+    margin-right: 1rem; /* espacio a la derecha */
+    padding: 0.2rem 0.5rem; /* espaciado interno */
+    background-color: #bdc3c7; /* fondo gris */
+    border-radius: 3px; /* esquinas redondeadas */
+    font-size: 0.8rem; /* fuente mas pequeña */
+}
+
+/* boton de eliminar */
+.delete-btn {
+    background: none; /* sin fondo */
+    border: none; /* sin borde */
+    font-size: 1rem; /* tamaño de fuente */
+    cursor: pointer; /* cursor de mano */
+    padding: 0.2rem; /* espaciado minimo */
+}
+
+/* pie de pagina */
+footer {
+    background-color: #2c3e50; /* fondo azul oscuro */
+    color: white; /* texto blanco */
+    text-align: center; /* texto centrado */
+    padding: 2rem; /* espaciado interno */
+    margin-top: 2rem; /* espacio arriba */
+}
+
+/* estilos responsivos para moviles */
+@media (max-width: 768px) {
+    /* menu vertical en moviles */
+    header nav ul {
+        flex-direction: column; /* elementos en columna */
+        gap: 0.5rem; /* menos espacio */
+    }
+    
+    /* tareas en columna en moviles */
+    .task-item {
+        flex-direction: column; /* elementos en columna */
+        align-items: flex-start; /* alinear al inicio */
+    }
+    
+    /* espaciado en elementos de tarea */
+    .task-item > * {
+        margin: 0.2rem 0; /* margen pequeno */
+    }
+}
